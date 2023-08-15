@@ -1,0 +1,40 @@
+function duplicate_and_rename sheet() {
+  var currentMonth = new Date();
+  let spread_sheets = DriveApp.getFileById("1C7zrq53fXfgNwmKZ7VdwY3BEWtIqSFqg5oi-ABSRbog");
+  spread_sheets.makeCopy(); // Copy of Template
+
+  let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  let template = DriveApp.getFilesByName('Copy of Template').next();
+  let month = (currentMonth.getMonth()+1 );
+  let year = (currentMonth.getFullYear());
+
+  if(month == "1"){
+    template.setName(months[0] +" "+ year);//January
+  } else if(month == "2"){
+    template.setName(months[1] +" "+ year); // February
+  }else if(month == "3"){
+    template.setName(months[2] +" "+ year); //March
+  }else if(month == "4"){
+    template.setName(months[3] +" "+ year); //April
+  }else if(month == "5"){
+    template.setName(months[4] +" "+ year);//May
+  }else if(month == "6"){
+    template.setName(months[5] +" "+ year);//June
+  }else if(month == "7"){
+    template.setName(months[6] +" "+ year);//July
+  }else if(month == "8"){
+    template.setName(months[7] +" "+ year); //August
+  }else if(month == "9"){
+    template.setName(months[8] +" "+ year);//September
+  }else if(month == "10"){
+    template.setName(months[9] +" "+ year);//October
+  }else if(month == "11"){
+    template.setName(months[10] +" "+ year);//November
+  }else if(month == "12"){
+    template.setName(months[11] +" "+ year);//December
+  }
+  else{
+    template.setName("INVALID")
+  }
+}
