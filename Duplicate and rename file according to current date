@@ -1,6 +1,6 @@
 function duplicate_and_rename sheet() {
   var currentMonth = new Date();
-  let spread_sheets = DriveApp.getFileById("1C7zrq53fXfgNwmKZ7VdwY3BEWtIqSFqg5oi-ABSRbog");
+  let spread_sheets = DriveApp.getFileById("Google Sheet File ID");
   spread_sheets.makeCopy(); // Copy of Template
 
   let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
