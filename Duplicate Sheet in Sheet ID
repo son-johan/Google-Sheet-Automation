@@ -1,0 +1,11 @@
+var currentTime = new Date();
+var startTime = new Date();
+
+//Format name
+var newSheetName =  (currentTime.getMonth() + 1) + "-" + currentTime.getDate() +"-"+ currentTime.getFullYear();
+
+function duplicate_sheet() {
+  const binga_spreadsheet = SpreadsheetApp.openById('Sheet ID here');
+  const binga_template = binga_spreadsheet.getSheetByName('Template');
+  binga_template.activate();
+  binga_spreadsheet.duplicateActiveSheet().setName(newSheetName)
