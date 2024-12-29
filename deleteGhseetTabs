@@ -1,0 +1,19 @@
+function reset() {
+   // reset Gsheet template and keep the tab needed.
+  // List of tab names to keep
+  const tabsToKeep = ["Summary", "Template", "Trigger"]; // Replace with the names of the tabs to retain
+
+  // Get the active spreadsheet and all sheets
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const sheets = spreadsheet.getSheets();
+
+  // Loop through the sheets and delete those not in the list of tabs to keep
+  sheets.forEach(sheet => {
+    if (!tabsToKeep.includes(sheet.getName())) {
+      spreadsheet.deleteSheet(sheet);
+    }
+  });
+
+  // Log completion
+  Logger.log(`All tabs except '${tabsToKeep.join(", ")}' have been deleted.`);
+}
